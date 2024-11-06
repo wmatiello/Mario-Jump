@@ -1,0 +1,19 @@
+{
+  "highScores": [
+    {
+      "id": 1,
+      "name": "willian Matiello",
+      "score": 600
+    },
+    {
+      "id": 2,
+      "name": "Luiz Augusto",
+      "score": 300
+    },
+    {
+      "id": 3,
+      "name": "Pedro Cabral",
+      "score": 230
+    }
+  ]
+}

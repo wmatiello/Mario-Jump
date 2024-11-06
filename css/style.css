@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+#body {
+    background-color: rgb(44, 42, 42);
+    margin: 0%;
+    
+}
+
+/* Tela de entrada de nome */
+.name-input {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    z-index: 9999; /* Garantir que fique na frente */
+}
+
+/* Estilo do campo de input de nome */
+.name-input input {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Estilo do botão de "Começar Jogo" */
+.name-input button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Jogo - área de jogo */
+.game-board {
+    width: 80%;
+    height: 500px;
+    border-bottom: 15px solid #26881f;
+    margin: 0% auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87ceeb, #ebf6ff); /* Fundo do jogo */
+    z-index: 1; /* Colocar atrás da tela de entrada */
+}
+
+/* Pipes, Mario, etc. */
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 1.0s infinite linear;
+    right: 0;
+}
+
+.mario {
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+}
+
+.jump {
+    animation: jump 500ms ease-out;
+}
+
+.clouds {
+    position: absolute;
+    width: 550px;
+    animation: clouds-animation 20s infinite linear;
+}
+
+/* Score */
+.score-display {
+    font-size: 24px;
+    color: white;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo para visualização */
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 10; /* Garantir que o score esteja acima de outros elementos, mas atrás da tela de entrada */
+}
+
+/* Tela de Game Over */
+.game-over-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    animation: fade-in 0.5s ease-in-out;
+    display: none;
+    z-index: 9999; /* Garantir que fique na frente */
+}
+
+/* Animações */
+@keyframes pipe-animation {
+    from {
+        left: -80;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 50%;
+    }
+
+    50% {
+        bottom: 50%;
+    }
+
+    60% {
+        bottom: 50%;
+    }
+
+    100% {
+        bottom: 0%;
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -550px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
